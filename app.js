@@ -19,29 +19,41 @@
 
 	var gems =  [
 	{
-		name: 'Dodecahedron',
+		name: 'Nike Running Shoe',
 		price: 2.95,
-		description: 'Various different things about this gem.',
+		description: 'Various different things about this shoe.',
 		images: [
 		{
-			full: 'dodecahedron-01-full.jpg',
-			thumb: 'dodecahedron-01-thumb.jpg'
+			full: 'images/nike-01-full.jpg',
+			thumb: 'images/nike-01-thumb.jpg'
 		}
 		],
 		canPurchase: true,
 		soldOut: false
 	},
 	{
-		name: 'BullShitAgon',
-		price: 1000.95,
-		description: 'Various different things about this gem.',
+		name: 'Reebok Ballerina Pump',
+		price: 10.95,
+		description: 'Various different things about this shoe.',
+		images: [
+		{
+			full: 'images/reebok-01-full.jpg',
+			thumb: 'images/reebok-01-thumb.jpg'
+		}
+		],
 		canPurchase: true,
 		soldOut: false
 	},
 	{
-		name: 'MonkeyBallShaped',
+		name: 'Fila Skele-toes Flip Flop',
 		price: 12.95,
-		description: 'Various different things about this gem.',
+		description: 'Various different things about this shoe.',
+		images: [
+		{
+			full: 'images/skele-toes-01-full.jpg',
+			thumb: 'images/skele-toes-01-thumb.jpg'
+		}
+		],
 		canPurchase: true,
 		soldOut: false
 	}

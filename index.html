@@ -10,7 +10,7 @@
 				<h3> 
 					{{product.description}}
 					<em class="pull-right">{{product.price | currency}}</em>
-					<img ng-src="{{product.images[0].full}}"/>
+					<div><img ng-src="{{product.images[0].full}}"/></div>
 				</h3>
 				<section ng-init="tab = 1" ng-controller="PanelController as panel">
 					<ul class="nav nav-pills">
