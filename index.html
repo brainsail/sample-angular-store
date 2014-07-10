@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="store">
+	<head>
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+	</head>
+	<body ng-controller="StoreController as store">
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="product in store.products">
+				<h1>{{product.name}}</h1>
+				<h3> 
+					{{product.description}}
+					<em class="pull-right">{{product.price | currency}}</em>
+					<img ng-src="{{product.images[0].full}}"/>
+				</h3>
+				<section ng-init="tab = 1" ng-controller="PanelController as panel">
+					<ul class="nav nav-pills">
+						<li ng-class="{ active: panel.isSelected(1)}"><a href ng-click="panel.selectTab(1)">Description</a></li>
+						<li ng-class="{ active: panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)">Specifications</a></li>
+						<li ng-class="{ active: panel.isSelected(3)}"><a href ng-click="panel.selectTab(3)">Reviews</a></li>
+					</ul>
+					<div class="panel" ng-show="panel.isSelected(1)">
+						<blockquote>{{product.description}}</blockquote>
+					</div>
+					<div class="panel" ng-show="panel.isSelected(2)">
+						<blockquote>No Specs Yet</blockquote>
+					</div>
+					<div class="panel" ng-show="panel.isSelected(3)">
+						<blockquote>No Reviews Yet</blockquote>
+					</div>
+				</section>
+				<button ng-show="product.canPurchase"> Add to Cart </button>
+			</li>
+		</ul>
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</body>
+</html>
