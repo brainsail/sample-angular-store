@@ -7,12 +7,26 @@
 		<ul class="list-group">
 			<li class="list-group-item" ng-repeat="product in store.products">
 				<h1>{{product.name}}</h1>
+
 				<h3> 
 					{{product.description}}
 					<em class="pull-right">{{product.price | currency}}</em>
-					<div><img ng-src="{{product.images[0].full}}"/></div>
+					
 				</h3>
+
+				<!-- Image Gallery -->
+				<div class="img-wrap" ng-controller="GalleryController as gallery">
+					<img ng-src="{{product.images[gallery.current]}}"/>
+					<ul class="list-inline thumbs">
+						<li class="thumbnail" ng-repeat="image in product.images">
+							<img src="{{image}}"/>
+						</li>
+					</ul>
+				</div>
+
 				<section ng-init="tab = 1" ng-controller="PanelController as panel">
+
+					<!-- Tab Nav -->
 					<ul class="nav nav-pills">
 						<li ng-class="{ active: panel.isSelected(1)}"><a href ng-click="panel.selectTab(1)">Description</a></li>
 						<li ng-class="{ active: panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)">Specifications</a></li>
