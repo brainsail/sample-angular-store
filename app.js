@@ -24,6 +24,15 @@
 		};
 	});
 
+	app.controller('ReviewController', function () {
+		this.review = {};
+
+		this.addReview = function (product){
+			product.reviews.push(this.review);
+			this.review = {};
+		};
+	});
+
 	var shoes =  [
 	{
 		name: 'Nike Running Shoe',
@@ -34,8 +43,25 @@
 			'images/nike-01-thumb.jpg'
 		],
 		canPurchase: true,
-		soldOut: false
-		
+		soldOut: false,
+		reviews: [
+			{
+			stars: 5,
+			body: "Nice Shoe!",
+			author: "me@there.com"
+			},
+			{
+			stars: 3,
+			body: "Meh.",
+			author: "you@there.com"
+			},
+			{
+			stars: 2,
+			body: "Wouldn't be caught dead in these!",
+			author: "us@there.com"
+			}
+		]
+
 	},
 	{
 		name: 'Reebok Ballerina Pump',
@@ -46,7 +72,24 @@
 			'images/reebok-01-thumb.jpg'
 		],
 		canPurchase: true,
-		soldOut: false
+		soldOut: false,
+		reviews: [
+			{
+			stars: 5,
+			body: "Nice Shoe!",
+			author: "me@there.com"
+			},
+			{
+			stars: 3,
+			body: "Meh.",
+			author: "you@there.com"
+			},
+			{
+			stars: 2,
+			body: "Wouldn't be caught dead in these!",
+			author: "us@there.com"
+			}
+		]
 	},
 	{
 		name: 'Fila Skele-toes Flip Flop',
@@ -57,7 +100,24 @@
 			'images/skele-toes-01-thumb.jpg'
 		],
 		canPurchase: true,
-		soldOut: false
+		soldOut: false,
+		reviews: [
+			{
+			stars: 5,
+			body: "Nice Shoe!",
+			author: "me@there.com"
+			},
+			{
+			stars: 3,
+			body: "Meh.",
+			author: "you@there.com"
+			},
+			{
+			stars: 2,
+			body: "Wouldn't be caught dead in these!",
+			author: "us@there.com"
+			}
+		]
 	}
 	];
 })();
