@@ -1,0 +1,39 @@
+<section>
+	<div class="panel" ng-show="panel.isSelected(3)">
+		<h4> Reviews </h4>
+
+		<blockquote ng-repeat="review in product.reviews">
+				<b>Stars: {{review.stars}} </b></br>
+				{{review.body}}</br>
+				<footer> {{review.author}} on {{review.createdOn | date}} </footer>
+		</blockquote>
+		<!-- Live Preview -->
+		<form class="form-horizontal" role="form" name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+			<div>
+				<blockquote>
+					<h4>Preview</h4>
+					<strong>Stars: {{reviewCtrl.review.stars}}</strong></br>
+					{{reviewCtrl.review.body}}</br>
+					<cite class="clearfix">&mdash;{{reviewCtrl.review.author}}</cite>
+				</blockquote>
+				<fieldset class="form-group">
+					<select  ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars" required>
+	      			<option value="">Rate the Product</option>
+	    			</select>
+				</fieldset>
+				<fieldset class="form-group">
+					<label for="inputComments" class="control-label">Your Comments: </label>
+					<textarea class="form-control" id="inputComments" rows="2" ng-model="reviewCtrl.review.body" required></textarea>
+				</fieldset>
+	    		<fieldset class="form-group">
+	    			<label for="inputEmail" class="control-label">Email: </label>
+					<input class="form-control" placeholder="Email Address" ng-model="reviewCtrl.review.author" type="email" id="inputEmail" / required>
+	    		</fieldset>
+	    		<fieldset>
+	    			<button type="submit" class="btn btn-primary pull-right">Submit</button>
+	    		</fieldset>
+			</div>
+			
+		</form>
+	</div>
+</section>

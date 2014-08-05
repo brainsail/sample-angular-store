@@ -1,0 +1,9 @@
+<!-- Image Gallery -->
+<div class="img-wrap">
+	<img ng-src="{{product.images[gallery.current]}}"/>
+	<ul class="list-inline thumbs">
+		<li class="thumbnail" ng-repeat="image in product.images">
+			<img src="{{image}}"/>
+		</li>
+	</ul>
+</div>

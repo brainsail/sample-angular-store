@@ -6,23 +6,10 @@
 	<body ng-controller="StoreController as store">
 		<ul class="list-group">
 			<li class="list-group-item" ng-repeat="product in store.products">
-				<h1>{{product.name}}</h1>
 
-				<h3> 
-					{{product.description}}
-					<em class="pull-right">{{product.price | currency}}</em>
-					
-				</h3>
+				<product-title></product-title>
 
-				<!-- Image Gallery -->
-				<div class="img-wrap" ng-controller="GalleryController as gallery">
-					<img ng-src="{{product.images[gallery.current]}}"/>
-					<ul class="list-inline thumbs">
-						<li class="thumbnail" ng-repeat="image in product.images">
-							<img src="{{image}}"/>
-						</li>
-					</ul>
-				</div>
+				<product-gallery></product-gallery>
 
 				<section ng-init="tab = 1" ng-controller="PanelController as panel">
 
@@ -82,5 +69,6 @@
 		</ul>
 		<script type="text/javascript" src="angular.min.js"></script>
 		<script type="text/javascript" src="app.js"></script>
+		<script type="text/javascript" src="product.js"></script>
 	</body>
 </html>

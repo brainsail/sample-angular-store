@@ -1,5 +1,5 @@
 (function() {
-	var app = angular.module('store',[ ]);	
+	var app = angular.module('store',['product']);	
 	
 	app.controller('StoreController', function(){
 		this.products = shoes;
@@ -17,12 +17,12 @@
 		};
 	});
 
-	app.controller('GalleryController', function (){
-		this.current = 0;
-		this.setImage = function(newGallery){
-			this.current = newGallery || 0;
-		};
-	});
+	// app.controller('GalleryController', function (){
+	// 	this.current = 0;
+	// 	this.setImage = function(newGallery){
+	// 		this.current = newGallery || 0;
+	// 	};
+	// });
 
 	app.controller('ReviewController', function () {
 		this.review = {};
